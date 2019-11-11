@@ -9,15 +9,17 @@
 </head>
 <body>
 
-    <ul>
-        {% for processo in processos %}
-            <a href="{% url 'Processos:update_processo' processo.id %}">
-                <li> {{ processo.ar_Processo }} </li>
-            </a>
-        {% endfor %}
-    </ul>
+    <h1>Novo/Editar processo</h1>
 
-    <a href="{% url 'Processos:create_processo' %}">Novo Processo</a>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Salvar</button>
+    </form>
+
+    {% if processo %}
+        <a href="{% url 'Processos:delete_processo' processo.id %}">Deletar</a>
+    {% endif %}
 
 </body>
 </html>

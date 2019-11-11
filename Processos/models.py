@@ -10,4 +10,6 @@ class Processo(models.Model):
     cod_Materia = models.IntegerField()
     cod_Forma = models.IntegerField()
 
+    def __str__(self):
+        return self.ar_Processo
 
