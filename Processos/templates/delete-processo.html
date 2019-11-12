@@ -1,19 +1,39 @@
 <!doctype html>
+{% load static %}
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/Processos.css' %}">
+    <title>Deletar Processo</title>
 </head>
 <body>
 
-    <form method="POST">
-        {% csrf_token %}
-        <h2>Deseja remover {{ processo.ar_Processo}}?</h2>
-        <button type="submit">Confirmar</button>
-    </form>
+    <div class="imagem_fundo">
 
+        <div class="container">
+
+            <div class="box_central">
+
+                <h1 align="center">Deletar processo</h1>
+
+                <div class="box_li">
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h2 align="center">Deseja remover {{ processo.ar_Processo}}?</h2>
+                        <button class="botao" type="submit">Confirmar</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

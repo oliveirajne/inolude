@@ -1,23 +1,44 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/Processos.css' %}">
+    <title>Processos</title>
 </head>
 <body>
 
-    <ul>
-        {% for processo in processos %}
-            <a href="{% url 'Processos:update_processo' processo.id %}">
-                <li> {{ processo.ar_Processo }} </li>
-            </a>
-        {% endfor %}
-    </ul>
+    <div class="imagem_fundo">
 
-    <a href="{% url 'Processos:create_processo' %}">Novo Processo</a>
+        <div class="container">
+
+            <div class="box_central">
+
+                <h1 align="center">Processos</h1>
+
+                <div class="box_li">
+                    <ul>
+                    {% for processo in processos %}
+                        <a href="{% url 'Processos:update_processo' processo.id %}">
+                            <li> {{ processo.ar_Processo }} </li>
+                        </a>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                <br>
+
+                <a class="botao" href="{% url 'Processos:create_processo' %}">Novo Processo</a>
+
+
+            </div>
+        </div>
+
+    </div>
+
 
 </body>
 </html>
